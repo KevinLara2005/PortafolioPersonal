@@ -14,24 +14,24 @@ namespace PortafolioPersonal.Servicios
             return new List<ProyectoDTO>() {
                 new ProyectoDTO
                 {
-                    Titulo = "Amazon",
-                    Descripcion = "E-commerce realizado en ASP.NET Core",
-                    Link = "https://amazon.com",
-                    ImagenURL = "/imagenes/amazon.PNG"
+                    Titulo = "TaskFlow Pro",
+                    Descripcion = "Sistema de gestión de tareas con tableros Kanban, autenticación de usuarios y actualizaciones en tiempo real.",
+                    Link = "#",
+                    ImagenURL = "/imagenes/yo.jpg" // Usamos tu foto o la que tengas de placeholder por ahora
                 },
                 new ProyectoDTO
                 {
-                    Titulo = "New York Times",
-                    Descripcion = "Páginas de noticias en React",
-                    Link = "https://nytimes.com",
-                    ImagenURL = "/imagenes/nyt.PNG"
+                    Titulo = "EcoTrack Dashboard",
+                    Descripcion = "Panel de control interactivo para visualizar métricas de consumo energético utilizando gráficos dinámicos.",
+                    Link = "#",
+                    ImagenURL = "/imagenes/yo.jpg"
                 },
                 new ProyectoDTO
                 {
-                    Titulo = "Reddit",
-                    Descripcion = "Red social para compartir en comunidades",
-                    Link = "https://reddit.com",
-                    ImagenURL = "/imagenes/reddit.PNG"
+                    Titulo = "DevBlog API",
+                    Descripcion = "API RESTful completa con documentación Swagger, gestión de comentarios y sistema de roles (Admin/Autor).",
+                    Link = "#",
+                    ImagenURL = "/imagenes/yo.jpg"
                 }
             };
         }

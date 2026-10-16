@@ -1,15 +1,54 @@
-﻿<div class="text-center">
-    <h1 class="display-4">Soy Kevin Lara</h1>
-    <h2>Desarrollador en formación usando ASP.NET Core</h2>
-</div>
-
-<div class="row justify-content-center text-center bg-primary">
-    <div class="col col-md-7 seccion-bienvenida">
-        <h1>Te doy la bienvenida a mi portafolio</h1>
-        <p>
-            Soy un estudiante apasionado por el desarrollo web.
-            Estoy aprendiendo tecnologías como C#, ASP.NET Core, SQL Server y JavaScript.
-            Este portafolio muestra mi camino en el mundo del desarrollo de software.
-        </p>
+﻿<div class="container hero-wrapper">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <div class="container hero-wrapper" data-aos="fade-up">
+            <span class="hero-badge">🚀 Disponible para nuevos retos</span>
+                <h1 class="hero-title">
+                    Construyo soluciones digitales <br>
+                    <span class="highlight" id="typing-text"></span><span class="cursor">|</span>
+                </h1>
+            <p class="hero-desc">
+                Soy Kevin Lara, desarrollador .NET especializado en crear arquitecturas limpias,
+                APIs robustas y experiencias de usuario fluidas. Transformo requisitos complejos en código eficiente.
+            </p>
+            <div class="d-flex gap-3">
+                <a asp-controller="Home" asp-action="Proyectos" class="btn btn-neon">Ver mi trabajo</a>
+                <a asp-controller="Home" asp-action="Contacto" class="btn btn-outline-custom">Hablemos</a>
+            </div>
+        </div>
     </div>
 </div>
+    <script>
+            const textElement = document.getElementById('typing-text');
+            const phrases = ["que generan impacto.", "con código limpio.", "usando .NET Core.", "pensando en el usuario."];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeEffect() {
+                const currentPhrase = phrases[phraseIndex];
+
+                if (isDeleting) {
+                    textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 50 : 100;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    typeSpeed = 2000; // Pausa al terminar de escribir
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(typeEffect, typeSpeed);
+            }
+
+            document.addEventListener('DOMContentLoaded', typeEffect);
+    </script>

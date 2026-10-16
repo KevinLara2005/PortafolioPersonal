@@ -1,22 +1,29 @@
 ﻿@model IEnumerable<PortafolioPersonal.Models.ProyectoDTO>
 
-<div class="text-center mt-5 mb-3">
-    <h2>Mis trabajos recientes</h2>
-    <p>Aquí puedes ver algunos de mis trabajos más recientes</p>
-</div>
+<div class="container py-5">
+    <h2 class="mb-4" style="font-weight: 700; font-size: 2rem;">Proyectos Destacados</h2>
+    <div class="row g-4">
+        @foreach (var proyecto in Model)
+        {
 
-<div class="row">
-    @foreach (var proyecto in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm h-100">
-                <img src="@proyecto.ImagenURL" class="card-img-top" alt="@proyecto.Titulo" style="height: 200px; object-fit: cover;" />
-                <div class="card-body">
-                    <h5 class="card-title">@proyecto.Titulo</h5>
-                    <p class="card-text">@proyecto.Descripcion</p>
-                    <a href="@proyecto.Link" target="_blank" class="btn btn-primary">Visitar</a>
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="@proyecto.ImagenURL" alt="@proyecto.Titulo">
+                    <div class="card-body">
+                        <h5 class="card-title">@proyecto.Titulo</h5>
+                        <p class="card-text">@proyecto.Descripcion</p>
+                        <div>
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">MVC</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <a href="@proyecto.Link" class="btn btn-outline-custom w-100 mt-3" style="font-size: 0.9rem;">
+                            Ver detalles <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

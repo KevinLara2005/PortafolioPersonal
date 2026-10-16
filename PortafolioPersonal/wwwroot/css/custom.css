@@ -1,21 +1,246 @@
-﻿#Foto {
-    width: 200px;
-    margin: 2rem 0;
-    border-radius: 50%
+﻿:root {
+    --bg-deep: #0a0a0a;
+    --bg-surface: #161616;
+    --accent: #00ffa3; /* Verde menta neón */
+    --accent-dim: rgba(0, 255, 163, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border: #2a2a2a;
 }
 
-.seccion-bienvenida {
-    margin: 5rem 0 10rem 0;
-    color: white;
+body {
+    background-color: var(--bg-deep) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
 }
 
-    .seccion-bienvenida h1 {
-        margin-bottom: 1rem;
+/* Navbar minimalista */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 1.4rem;
+}
+
+    .navbar-brand span {
+        color: var(--accent);
     }
 
-    .seccion-bienvenida p {
-        font-family: sans-serif;
-        line-height: 1.5;
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+    .nav-link:hover {
+        color: var(--accent) !important;
+    }
+
+/* Hero Section Impactante */
+.hero-wrapper {
+    padding: 6rem 0 4rem;
+    text-align: left;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--accent-dim);
+    color: var(--accent);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 255, 163, 0.2);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+    .hero-title .highlight {
+        color: var(--accent);
+    }
+
+.hero-desc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+/* Botones personalizados */
+.btn-neon {
+    background-color: var(--accent);
+    color: #000;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .btn-neon:hover {
+        background-color: #00cc82;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 255, 163, 0.2);
+        color: #000;
+    }
+
+.btn-outline-custom {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+    .btn-outline-custom:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+/* Tarjetas de Proyectos (Glass/Surface) */
+.project-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+}
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .project-card img {
+        height: 220px;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border);
+        transition: transform 0.5s;
+    }
+
+    .project-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .project-card .card-body {
+        padding: 1.5rem;
+    }
+
+    .project-card .card-title {
+        font-weight: 700;
         font-size: 1.25rem;
-    }body {
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card .card-text {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
+
+.tech-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    margin-right: 6px;
+    margin-top: 10px;
+}
+
+/* Sección de Habilidades (Grid limpio) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+    .skill-item:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+/* Footer */
+footer {
+    background: var(--bg-surface) !important;
+    border-top: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+
+/* Scrollbar personalizado (Barra de desplazamiento) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00cc82;
+    }
+
+/* Color al seleccionar texto con el mouse */
+::selection {
+    background: var(--accent);
+    color: #000;
+}
+
+/* Efecto Glassmorphism en la Navbar (Vidrio esmerilado) */
+.navbar {
+    background: rgba(10, 10, 10, 0.7) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* Cursor parpadeante para efecto de escritura */
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--accent);
+    font-weight: 300;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
